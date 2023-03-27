@@ -5,9 +5,11 @@ const CustomerSays = () => {
   return (
     <section className="customerSaysBg">
       <h2>Testimonials</h2>
-      {customerReviews.map((review) => (
-        <Review review={review} />
-      ))}
+      <div className="reviewWrapper">
+        {customerReviews.map((review) => (
+          <Review review={review} />
+        ))}
+      </div>
     </section>
   );
 };

@@ -1,6 +1,6 @@
-import special1 from "../../../components/homepage/special1.png";
-import special2 from "../../../components/homepage/special2.png";
-import special3 from "../../../components/homepage/special3.png";
+import special1 from "../../../components/homepage/special1.svg";
+import special2 from "../../../components/homepage/special2.jpg";
+import special3 from "../../../components/homepage/special3.jpg";
 
 export const specialsOptions = [
   {

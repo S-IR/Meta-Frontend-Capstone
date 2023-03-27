@@ -1,5 +1,5 @@
 import React from "react";
-import ctgImg from "./ctaImg.png";
+import ctgImg from "./ctaImg.jpg";
 
 const CallToAction = () => {
   return (
@@ -12,8 +12,9 @@ const CallToAction = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exerc
         </p>
+        <button className="ctaButton">Reserve a Table</button>
       </div>
-      <img src={ctgImg} alt={"Pizza banner"} width={512} height={512} />
+      <img src={ctgImg} alt={"Pizza banner"} width={256} height={512} />
     </section>
   );
 };

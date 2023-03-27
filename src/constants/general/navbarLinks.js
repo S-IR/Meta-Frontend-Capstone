@@ -13,7 +13,7 @@ export const navbarLinks = [
   },
   {
     name: "Reservations",
-    href: "/reservations",
+    href: "/booking",
   },
   {
     name: "Order Online",

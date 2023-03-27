@@ -18,7 +18,7 @@ const Header = () => {
         />
         <ul>
           {navbarLinks.map((navLink) => (
-            <Link key={navLink.name} className={"navbarLink"} to={"/"}>
+            <Link key={navLink.name} className={"navbarLink"} to={navLink.href}>
               {navLink.name}
             </Link>
           ))}
