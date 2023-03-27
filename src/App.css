@@ -1,9 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap");
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
+  font-family: "Cambria", cursive;
+  background-image: url("./styles//websiteBg.png");
+  background-repeat: repeat;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Merienda", cursive;
 }
-
 a {
   color: black;
 }

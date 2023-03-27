@@ -1,16 +1,11 @@
-import { Form, Formik, useFormik } from "formik";
-import React, { useEffect, useState } from "react";
+import { useFormik } from "formik";
+import React from "react";
 import ReactDatePicker from "react-datepicker";
 import { number, z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import "react-datepicker/dist/react-datepicker.css";
 
 const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
-  const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState(null);
-  const [guests, setGuests] = useState(null);
-  const [occasion, setOccasion] = useState(null);
-
   const formSchema = z.object({
     date: z
       .date()
@@ -46,24 +41,28 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
       return submitForm(values);
     },
   });
-  useEffect(() => {
-    console.log("guests", guests);
-  }, [values.guests]);
+
   return (
     <form
+      className="w-[90vw] mx-auto rounded-md  h-auto bg-gradient-to-br from-yellow-300 to-yellow-400 flex flex-col items-center justify-center align-middle space-y-4 p-6  "
       id={"booking-form"}
       onSubmit={(e) => {
-        console.log("values", values);
         e.preventDefault();
         isValid
           ? handleSubmit(e)
           : console.log("errors", errors, "values", values);
       }}
-      style={{ display: `grid`, maxWidth: 200, gap: 20 }}
+      style={{ display: `grid` }}
     >
-      <label htmlFor="date">Choose date</label>
+      <label
+        className="text-2xl font-['Merienda'] text-yellow-800"
+        htmlFor="date"
+      >
+        Choose date
+      </label>
       <ReactDatePicker
         required
+        className="w-[20vw] rounded-md bg-yellow-800 active:bg-yellow-700 focus:bg-yellow-700  text-white transition-all duration-300 p-2 "
         id={"date"}
         selected={values.date}
         onChange={(date) => {
@@ -71,22 +70,40 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
           return setFieldValue("date", date);
         }}
       />
-      <div id="date-error">{errors.date ? errors.date : null}</div>
-      <label htmlFor="time">Choose time</label>
-      <select required onChange={handleChange} value={values.time} id="time">
+      <div className={"text-lg text-red-700"} id="date-error">
+        {errors.date ? errors.date : null}
+      </div>
+      <label
+        className="text-2xl font-['Merienda'] text-yellow-800"
+        htmlFor="time"
+      >
+        Choose time
+      </label>
+      <select
+        className="w-[20vw] rounded-md bg-yellow-800 active:bg-yellow-700 focus:bg-yellow-700  text-white transition-all duration-300 p-2 "
+        required
+        onChange={handleChange}
+        value={values.time}
+        id="time"
+      >
         {availableTimes.map((time) => (
           <option key={time} value={time}>
             {time}
           </option>
         ))}
       </select>
-      <div id={"time-error"}>{errors.time ? errors.time : null}</div>
-      <label htmlFor="guests">Number of guests</label>
+      <div className={"text-lg text-red-700"} id={"time-error"}>
+        {errors.time ? errors.time : null}
+      </div>
+      <label
+        className="text-2xl font-['Merienda'] text-yellow-800"
+        htmlFor="guests"
+      >
+        Number of guests
+      </label>
       <input
-        onChange={(e) => {
-          console.log(e.target.value, `e`);
-          setFieldValue("guests", parseInt(e.target.value));
-        }}
+        onChange={(e) => setFieldValue("guests", parseInt(e.target.value))}
+        className="w-[20vw] rounded-md bg-yellow-800 active:bg-yellow-700 focus:bg-yellow-700  text-white transition-all duration-300 p-2 "
         value={values.guests}
         type={"number"}
         min="0"
@@ -94,15 +111,25 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
         id="guests"
         required
       />
-      <div id={"guests-error"}>{errors.guests ? errors.guests : null}</div>
-      <label htmlFor="occasion">Occasion</label>
+      <div className={"text-lg text-red-700"} id={"guests-error"}>
+        {errors.guests ? errors.guests : null}
+      </div>
+      <label
+        className="text-2xl font-['Merienda'] text-yellow-800"
+        htmlFor="occasion"
+      >
+        Occasion
+      </label>
       <select
         required
+        className="w-[20vw] rounded-md bg-yellow-800 active:bg-yellow-700 focus:bg-yellow-700 text-white transition-all duration-300 p-2 "
         onChange={handleChange}
         value={values.occasion}
         id="occasion"
       >
-        <div id={"occasion-error"}>{errors.guests ? errors.guests : null}</div>
+        <div className={"text-lg text-red-700"} id={"occasion-error"}>
+          {errors.guests ? errors.guests : null}
+        </div>
         <option value={"Birthday"}>Birthday</option>
         <option value={"Anniversary"}>Anniversary</option>
       </select>
