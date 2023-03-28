@@ -191,22 +191,3 @@ test("Does a formik error appear when trying to put a guests number that is less
     expect(errorGuestsInput.innerHTML).toBe("We cannot take that many people");
   });
 });
-
-// test("Does a HTML error appear when trying to put a occasion other than Birthday or Anniversary?", async () => {
-//   configure({ testIdAttribute: "id" });
-
-//   render(
-//     <MemoryRouter initialEntries={[route]}>
-//       <Main />
-//     </MemoryRouter>
-//   );
-
-//   const submit = await screen.findByTestId("submit-button");
-//   const occasionInput = await screen.findByTestId("occasion");
-//   fireEvent.change(occasionInput, {
-//     target: { value: "something other than birthday or anniversary" },
-//   });
-
-//   fireEvent.click(submit);
-//   expect(occasionInput).toBeInvalid();
-// });

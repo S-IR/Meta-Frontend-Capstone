@@ -5,13 +5,12 @@ import ctgImg from "./ctaImg.jpg";
 const CallToAction = () => {
   const navigate = useNavigate();
   return (
-    <section className="ctaBg">
+    <section className="ctaBg mt-36 md-mt-0 ">
       <div className="ctgTextDiv">
         <h1 className="title">Little Lemon</h1>
         <h2 className="subTitle">Chicago</h2>
         <p
-          style={{ fontSize: 18 }}
-          className={"text-white font-bold font-serif "}
+          className={"text-white font-bold font-serif font-sm lg:font-medium "}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -21,7 +20,13 @@ const CallToAction = () => {
           Reserve a Table
         </button>
       </div>
-      <img src={ctgImg} alt={"Pizza banner"} width={300} height={600} />
+      <img
+        className="hidden md:inline-block"
+        src={ctgImg}
+        alt={"Pizza banner"}
+        width={300}
+        height={600}
+      />
     </section>
   );
 };

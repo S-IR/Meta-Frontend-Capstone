@@ -4,7 +4,7 @@ import marioAndAdrian2 from "../homepage/mario-and-adrian2.jpg";
 
 const Chicago = () => {
   return (
-    <section className="chicagoBg">
+    <section className="chicagoBg px-[6vw] lg:px-[15vw] ">
       <div className="chicagoText">
         <h1 className="title">Little Lemon</h1>
         <h1 className="subText" style={{ maxWidth: "30vw" }}>
@@ -16,7 +16,7 @@ const Chicago = () => {
           minim veniam, quis nostrud exerc
         </h3>
       </div>
-      <div style={{ position: "relative", marginTop: "15vh" }}>
+      <div className="relative mt-4 hidden md:inline-block">
         <img
           style={{ objectFit: "scale-down" }}
           src={marioAndAdrian1}

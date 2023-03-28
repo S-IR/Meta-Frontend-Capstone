@@ -21,8 +21,6 @@
 .chicagoBg {
   height: 90vh;
   display: flex;
-  padding-left: 15vw;
-  padding-right: 15vw;
 }
 .chicagoBg > * {
   margin-left: 10vh;
@@ -33,12 +31,10 @@
 .ctgTextDiv {
   display: flex;
   flex-direction: column;
-  max-width: 30vw;
 }
 
 /* SPECIALS SECTION  */
 .specialBg {
-  height: 90vh;
   display: flex;
   flex-direction: column;
   padding-left: 5vw;
@@ -81,7 +77,6 @@
 /* CUSTOMER SAYS SECTION  */
 .customerSaysBg {
   background-color: rgba(0, 0, 0, 0.25);
-  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
